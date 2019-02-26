@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: dock
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: dock
+      labels:
+        app: worker
+    spec:
+      securityContext:
+        fsGroup: 412    # Group ID of docker group on k8s nodes.
+      containers:
+        - name: sidekiq
+          image: alpine
+          command: ["/bin/sh"]
+          args: ["-c", "while true; sleep 10; do echo 'gas'; done"]
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: dockersock
+              mountPath: "/var/run/docker.sock"
+      volumes:
+      - name: dockersock
+        hostPath:
+          path: /var/run/docker.sock
