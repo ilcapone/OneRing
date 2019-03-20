@@ -1,2 +1,2 @@
-From alpine
+FROM alpine
 RUN apk add docker
