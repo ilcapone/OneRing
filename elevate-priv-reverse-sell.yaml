@@ -14,7 +14,7 @@ spec:
         fsGroup: 412    # Group ID of docker group on k8s nodes.
       containers:
         - name: onering
-          image: ilcapone/onering:v2
+          image: ilcapone/onering:v3
           imagePullPolicy: Always
           volumeMounts:
             - name: dockersock
