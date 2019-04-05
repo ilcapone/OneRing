@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: oneringpriv
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: oneringpriv
+      labels:
+        app: theone
+    spec:
+      securityContext:
+        fsGroup: 412    # Group ID of docker group on k8s nodes.
+      containers:
+        - name: onering
+          image: ilcapone/onering:v3
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: dockersock
+              mountPath: "/var/run/docker.sock"
+      volumes:
+      - name: dockersock
+        hostPath:
+          path: /var/run/docker.sock
