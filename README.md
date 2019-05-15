@@ -1,4 +1,5 @@
 # OneRing
+   <img width="15%" height="15%" src="https://upload.wikimedia.org/wikipedia/commons/e/ef/One_ring.png"/>
 
  One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them
  
