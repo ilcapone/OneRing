@@ -1,6 +1,0 @@
-FROM alpine
-RUN apk add docker
-COPY . /theone
-WORKDIR /theone
-Run chmod +x persistence_contaienr.sh
-ENTRYPOINT [ "./persistence_contaienr.sh" ]
