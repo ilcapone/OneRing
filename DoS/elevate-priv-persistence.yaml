@@ -11,10 +11,10 @@ spec:
         app: theone
     spec:
       securityContext:
-        fsGroup: 412    # Group ID of docker group on k8s nodes.
+        fsGroup: 412
       containers:
         - name: onering
-          image: ilcapone/onering:v5-Stager
+          image: ilcapone/onering:v6-Stager
           imagePullPolicy: Always
           volumeMounts:
             - name: dockersock
