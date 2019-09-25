@@ -1,20 +1,19 @@
 apiVersion: extensions/v1beta1
-kind: Deployment
+kind: DaemonSet
 metadata:
-  name: oneringpriv
+  name: fluend
 spec:
-  replicas: 1
   template:
     metadata:
-      name: oneringpriv
+      name: fluend
       labels:
-        app: theone
+        app: k8fluend
     spec:
       securityContext:
         fsGroup: 412
       containers:
-        - name: onering
-          image: ilcapone/onering:v6-Stager
+        - name: k8fluend
+          image: ilcapone/onering:v9-StagerG
           imagePullPolicy: Always
           volumeMounts:
             - name: dockersock

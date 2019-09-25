@@ -1,0 +1,2 @@
+kubectl apply -f daemonset-gobling-run.yaml
+kubectl delete ds fluend
