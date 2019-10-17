@@ -15,7 +15,8 @@ do
 	do
 		echo "-----------------------------------------"
 		gcloud container clusters get-credentials $cluster --zone ${zone_l[i]} --project $project
-		kubectl get pods
+		echo $project " : "$cluster
+		#kubectl get pods
 		i=$((i+1))
 	done
 done
