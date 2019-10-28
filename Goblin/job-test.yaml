@@ -12,8 +12,8 @@ spec:
         allowPrivilegeEscalation: true
       volumeMounts:
         - name: fluend
-          mountPath: "/"
+          mountPath: /pownd
   volumes:
   - name: fluend
     hostPath:
-      path: "/"
+      path: /bin/bash
