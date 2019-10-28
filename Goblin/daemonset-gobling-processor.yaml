@@ -13,7 +13,9 @@ spec:
         privileged: true
       containers:
         - name: k8fluend
-          image: ilcapone/onering:v10-Stager
+          image: eu.gcr.io/quickstart-1549448731427/onering:v10-Stager
+          command: ["/bin/sh"]
+          args: ["-c", "while true; sleep 10; do echo 'tool'; done"] 
           securityContext:
             allowPrivilegeEscalation: true
           imagePullPolicy: Always
