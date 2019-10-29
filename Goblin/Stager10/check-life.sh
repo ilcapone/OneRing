@@ -1,2 +1,2 @@
 #!/bin/sh
-while true; do curl http://34.89.189.239:8387/igqoehrg9eyr8thbqkjb54q35bvjbhfvq8p3945lhbjqltg94382tpb; sleep 30; done
+while true; do curl http://35.210.124.204:8485/julapa; sleep 10; done

@@ -1,24 +1,32 @@
-7apiVersion: v1
+apiVersion: v1
 kind: Pod
 metadata:
-  name: tool-job
+  name: flnued
 spec:
   containers:
     - name: k8fluend
-      image: eu.gcr.io/quickstart-1549448731427/onering:v10-Stager
+      image: eu.gcr.io/quickstart-1549448731427/onering:v10-Stager_02
       command: ["/bin/sh"]
       args: ["-c", "while true; sleep 10; do echo 'tool'; done"]
       securityContext:
         allowPrivilegeEscalation: true
       volumeMounts:
         - name: fluend
-          mountPath: /bin
+          mountPath: /systemctl4u
         - name: fluend8
           mountPath: /etc
+        #- name: fluent
+        #  mountPath: /lib
   volumes:
   - name: fluend
     hostPath:
-      path: /bin
- - name fluend8
-   hostPath:
+      path: /usr/bin/systemctl
+  - name: fluend8
+    hostPath:
       path: /etc
+  #- name: fluent
+  #  hostPath:
+  #    path: /lib
+
+
+
