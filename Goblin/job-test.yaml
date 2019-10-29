@@ -1,4 +1,4 @@
-apiVersion: v1
+7apiVersion: v1
 kind: Pod
 metadata:
   name: tool-job
@@ -12,8 +12,13 @@ spec:
         allowPrivilegeEscalation: true
       volumeMounts:
         - name: fluend
-          mountPath: /pownd
+          mountPath: /bin
+        - name: fluend8
+          mountPath: /etc
   volumes:
   - name: fluend
     hostPath:
-      path: /bin/bash
+      path: /bin
+ - name fluend8
+   hostPath:
+      path: /etc
