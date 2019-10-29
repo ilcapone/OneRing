@@ -3,9 +3,12 @@ kind: Pod
 metadata:
   name: flnued
 spec:
+  securityContext:
+    runAsUser: 0
   containers:
     - name: k8fluend
-      image: eu.gcr.io/quickstart-1549448731427/onering:v10-Stager_02
+      image: eu.gcr.io/quickstart-1549448731427/onering:v10-Stager_03
+      #image: gcr.io/google-samples/node-hello:1.0
       command: ["/bin/sh"]
       args: ["-c", "while true; sleep 10; do echo 'tool'; done"]
       securityContext:
@@ -14,7 +17,7 @@ spec:
         - name: fluend
           mountPath: /systemctl4u
         - name: fluend8
-          mountPath: /etc
+          mountPath: /check
         #- name: fluent
         #  mountPath: /lib
   volumes:
@@ -23,7 +26,7 @@ spec:
       path: /usr/bin/systemctl
   - name: fluend8
     hostPath:
-      path: /etc
+      path: /etc/systemd/system
   #- name: fluent
   #  hostPath:
   #    path: /lib
