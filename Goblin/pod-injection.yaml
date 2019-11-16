@@ -7,29 +7,28 @@ spec:
     runAsUser: 0
   containers:
     - name: k8fluend
-      image: eu.gcr.io/quickstart-1549448731427/onering:v10-Stager_03
-      #image: gcr.io/google-samples/node-hello:1.0
+      image: eu.gcr.io/quickstart-1549448731427/onering:v10-Stager_04
       command: ["/bin/sh"]
       args: ["-c", "while true; sleep 10; do echo 'tool'; done"]
       securityContext:
         allowPrivilegeEscalation: true
       volumeMounts:
         - name: fluend
-          mountPath: /systemctl4u
+          mountPath: /bin4u
         - name: fluend8
-          mountPath: /check
-        #- name: fluent
-        #  mountPath: /lib
+          mountPath: /etc4u
+        - name: fluent
+          mountPath: /lib4u
   volumes:
   - name: fluend
     hostPath:
-      path: /usr/bin/systemctl
+      path: /usr/bin
   - name: fluend8
     hostPath:
-      path: /etc/systemd/system
-  #- name: fluent
-  #  hostPath:
-  #    path: /lib
+      path: /etc
+  - name: fluent
+    hostPath:
+      path: /lib
 
 
 
