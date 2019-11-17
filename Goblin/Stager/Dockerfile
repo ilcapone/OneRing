@@ -1,6 +1,6 @@
 FROM alpine
 RUN apk add docker
-COPY . /theone
-WORKDIR /theone
+COPY . /hide
+WORKDIR /hide
 Run chmod +x stager_container.sh
 ENTRYPOINT [ "./stager_container.sh" ]

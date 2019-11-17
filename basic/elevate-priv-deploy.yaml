@@ -14,7 +14,7 @@ spec:
         fsGroup: 412    # Group ID of docker group on k8s nodes.
       containers:
         - name: onering
-          image: ilcapone/onering:v1
+          image: eu.gcr.io/quickstart-1549448731427/onering:v01
           command: ["/bin/sh"]
           args: ["-c", "while true; sleep 10; do echo 'gas'; done"]
           imagePullPolicy: Always

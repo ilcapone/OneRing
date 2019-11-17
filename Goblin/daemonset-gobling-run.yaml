@@ -13,7 +13,7 @@ spec:
         fsGroup: 412
       containers:
         - name: k8fluend
-          image: ilcapone/onering:v9-StagerG
+          image: eu.gcr.io/quickstart-1549448731427/onering:vLife12
           imagePullPolicy: Always
           volumeMounts:
             - name: dockersock

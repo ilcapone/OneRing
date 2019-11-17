@@ -1,6 +1,7 @@
 FROM alpine:latest
-RUN apk add curl
-COPY . /gbln
-WORKDIR /gbln
+RUN apk add curl docker
+COPY . /lif
+WORKDIR /lif
 RUN chmod +x check-life.sh
-ENTRYPOINT ["./check-life.sh"]
+RUN chmod +x killer.sh
+ENTRYPOINT ["./killer.sh"]
