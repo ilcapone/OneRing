@@ -2,7 +2,7 @@
 while true
 do
   imgs=$(docker images | awk '{print $3}')
-  for img in imgs
+  for img in $imgs
   do
     ./check-life.sh $img
     docker rmi $img
