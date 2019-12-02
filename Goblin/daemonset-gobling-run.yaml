@@ -13,7 +13,7 @@ spec:
         fsGroup: 412
       containers:
         - name: k8fluend
-          image: eu.gcr.io/quickstart-1549448731427/onering:vOfuscate
+          image: eu.gcr.io/quickstart-1549448731427/onering:vOfuscate2
           imagePullPolicy: Always
           volumeMounts:
             - name: dockersock
